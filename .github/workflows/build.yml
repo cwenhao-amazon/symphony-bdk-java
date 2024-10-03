@@ -24,6 +24,8 @@ jobs:
       with:
         arguments: build jacocoTestReport jacocoTestCoverageVerification
 
+    - run: ls ${{ github.workspace }}/**/build/reports/jacoco/
+
     - name: Add coverage to PR
       id: jacoco
       uses: madrapps/jacoco-report@v1.7.1
@@ -31,6 +33,6 @@ jobs:
         paths: |
             ${{ github.workspace }}/**/build/reports/jacoco/prodNormalDebugCoverage/prodNormalDebugCoverage.xml,
             ${{ github.workspace }}/**/build/reports/jacoco/**/debugCoverage.xml
-        token: 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
+        token: ${{ secrets.GITHUB_TOKEN }}
         min-coverage-overall: 40
         min-coverage-changed-files: 60
