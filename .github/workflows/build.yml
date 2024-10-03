@@ -24,7 +24,7 @@ jobs:
       with:
         arguments: build jacocoTestReport jacocoTestCoverageVerification
 
-    - run: ls ${{ github.workspace }}/**/build/reports/jacoco/
+    - run: ls ${{ github.workspace }}/**/build/reports/jacoco/test/
 
     - name: Add coverage to PR
       id: jacoco
