@@ -3,6 +3,7 @@ plugins {
     id 'bdk.java-publish-conventions'
     id 'bdk.java-codegen-conventions'
     id 'de.undercouch.download'
+    id 'jacoco'
 }
 
 description = 'Symphony Java BDK - Groups Extension'
@@ -59,5 +60,12 @@ jacocoTestCoverageVerification {
             element = 'CLASS'
             excludes = ['com.symphony.bdk.ext.group.gen.api.*']
         }
+    }
+}
+
+jacocoTestReport {
+    reports {
+        xml.required = true
+        csv.required = ture
     }
 }

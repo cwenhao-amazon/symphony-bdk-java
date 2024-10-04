@@ -1,6 +1,7 @@
 plugins {
     id 'bdk.java-library-conventions'
     id 'bdk.java-publish-conventions'
+    id 'jacoco'
 }
 
 description = 'Spring Boot Wrapper for the Symphony BDK Core module'
@@ -19,6 +20,13 @@ jacocoTestCoverageVerification {
                 'com.symphony.bdk.spring.config.BdkActivityConfig.SlashAnnotationProcessor'
             ]
         }
+    }
+}
+
+jacocoTestReport {
+    reports {
+        xml.required = true
+        csv.required = ture
     }
 }
 

@@ -30,6 +30,14 @@ jobs:
 
     - run: cat ${{ github.workspace }}/**/build/reports/jacoco/test/jacocoTestReport.csv
 
+    - name: Archive code coverage results
+      uses: actions/upload-artifact@v4
+      with:
+        name: code-coverage-report
+        path: |
+          ${{ github.workspace }}/**/build/reports/jacoco/test/jacocoTestReport.xml
+          ${{ github.workspace }}/**/build/reports/jacoco/test/jacocoTestReport.csv
+
     - name: Add coverage to PR
       id: jacoco
       uses: madrapps/jacoco-report@v1.7.1

@@ -1,6 +1,7 @@
 plugins {
     id 'bdk.java-library-conventions'
     id 'bdk.java-publish-conventions'
+    id 'jacoco'
 }
 
 description = 'Spring Boot Starter that ease Application developments'
@@ -22,6 +23,7 @@ jacocoTestCoverageVerification {
 jacocoTestReport {
     reports {
         xml.required = true
+        csv.required = true
     }
 }
 

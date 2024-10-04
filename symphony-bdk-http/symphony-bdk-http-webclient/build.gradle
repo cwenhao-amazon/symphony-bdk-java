@@ -1,6 +1,7 @@
 plugins {
     id 'bdk.java-library-conventions'
     id 'bdk.java-publish-conventions'
+    id 'jacoco'
 }
 
 description = 'Symphony Java BDK Core Http Spring WebClient'
@@ -15,6 +16,13 @@ jacocoTestCoverageVerification {
             }
             element = 'CLASS'
         }
+    }
+}
+
+jacocoTestReport {
+    reports {
+        xml.required = true
+        csv.required = ture
     }
 }
 
