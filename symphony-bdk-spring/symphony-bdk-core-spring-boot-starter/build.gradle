@@ -26,7 +26,7 @@ jacocoTestCoverageVerification {
 jacocoTestReport {
     reports {
         xml.required = true
-        csv.required = ture
+        csv.required = true
     }
 }
 
