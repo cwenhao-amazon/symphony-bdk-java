@@ -19,6 +19,12 @@ jacocoTestCoverageVerification {
     }
 }
 
+jacocoTestReport {
+    reports {
+        xml.required = true
+    }
+}
+
 dependencies {
     api project(':symphony-bdk-core')
     api 'org.springframework.boot:spring-boot-starter'

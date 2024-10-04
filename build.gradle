@@ -61,9 +61,3 @@ dependencyCheck {
     suppressionFile="./allow-list.xml"
 }
 
-//include below if XML report is desired
-jacocoTestReport {
-    reports {
-        xml.required = true
-    }
-}
