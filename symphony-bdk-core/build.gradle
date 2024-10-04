@@ -3,6 +3,7 @@ plugins {
     id 'bdk.java-publish-conventions'
     id 'org.openapi.generator'
     id 'de.undercouch.download'
+    id 'jacoco'
 }
 
 description = 'Symphony Java BDK Core'
@@ -12,6 +13,13 @@ javadoc {
     options.group 'Core - Authentication', 'com.symphony.bdk.core.auth*'
     options.group 'Core - Service', 'com.symphony.bdk.core.service*'
     options.group 'Core - Activity', 'com.symphony.bdk.core.activity*'
+}
+
+jacocoTestReport {
+    reports {
+        xml.required = true
+        csv.required = true
+    }
 }
 
 jacocoTestCoverageVerification {
@@ -27,6 +35,8 @@ jacocoTestCoverageVerification {
         }
     }
 }
+
+
 
 dependencies {
     api project(':symphony-bdk-config')
