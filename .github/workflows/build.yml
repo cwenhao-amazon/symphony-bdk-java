@@ -26,6 +26,10 @@ jobs:
 
     - run: ls ${{ github.workspace }}/**/build/reports/jacoco/test/html/
 
+    - run: ls ${{ github.workspace }}/**/build/reports/jacoco/test/
+
+    - run: ls ${{ github.workspace }}/**/build/reports/jacoco/test/xml/
+
     - name: Add coverage to PR
       id: jacoco
       uses: madrapps/jacoco-report@v1.7.1
